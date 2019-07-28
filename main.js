@@ -44,8 +44,27 @@ const prevSlider = () => {
 
 next.addEventListener('click', e => {
     nextSlider();
+    if (auto) {
+        // Clear the interval
+        clearInterval(slideInterval);
+        // Run next slide at interval time
+        slideInterval = setInterval(nextSlider, intervalTime);
+    }
 });
 
 prev.addEventListener('click', e => {
     prevSlider();
+    if (auto) {
+        // Clear the interval
+        clearInterval(slideInterval);
+        // Run next slide at interval time
+        slideInterval = setInterval(nextSlider, intervalTime);
+    }
 });
+
+// Auto slide
+if (auto) {
+    // Run next slide at interval time
+    slideInterval = setInterval(nextSlider, intervalTime);
+
+}
