@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #333;
+    color: white;
+    line-height: 1.6;
+}
+
+.slider {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* initial opacity for the slide should be zero as it will be changed with the 
+    class "current" */
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.slide.current {
+    opacity: 1;
+}
+
+/* content styling */
+
+.slide .content {
+    position: absolute;
+    bottom: 70px;
+    left: -600px;
+    width: 600px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 35px;
+    opacity: 0;
+    color: #333;
+}
+
+.slide.current .content {
+    opacity: 1;
+    transform: translateX(600px);
+    transition: all 0.7s ease-in-out 0.3s;
+}
+
+/* heading styling */
+.slide .content h1 {
+    margin-bottom: 10px;
+}
+
+.buttons button#next {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+}
+
+.buttons button#prev {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+}
+
+.buttons button {
+    border: 2px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    padding: 13px 15px;
+    border-radius: 50%;
+    outline: none;
+}
+
+.buttons button:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Add background images */
+
+.slide:first-child {
+    background: url('./img/slide1.jpeg') no-repeat center center/cover;
+}
+
+.slide:nth-child(1) {
+    background: url('./img/slide2.jpeg') no-repeat center center/cover;
+}
+
+.slide:nth-child(2) {
+    background: url('./img/slide3.jpeg') no-repeat center center/cover;
+}
+
+.slide:nth-child(3) {
+    background: url('./img/slide4.jpeg') no-repeat center center/cover;
+}
+
+.slide:nth-child(4) {
+    background: url('./img/slide5.jpeg') no-repeat center center/cover;
+}
