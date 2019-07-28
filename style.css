@@ -87,6 +87,21 @@ body {
     color: #333;
 }
 
+@media (max-width: 500px) {
+
+    /* hide it initally */
+    .slide.content {
+        bottom: -300px;
+        left: 0px;
+        width: 100%;
+    }
+
+    .slide.current.content {
+        /* -ve value becaue we are coming from the bottom */
+        transform: translateY(-300px);
+    }
+}
+
 /* Add background images */
 
 .slide:first-child {
